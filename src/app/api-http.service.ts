@@ -17,7 +17,7 @@ export class ApiHttpService {
   constructor(private httpClient: HttpClient) { }
 
   getCountryByName(country: CountryDetails): Observable<CountryDetails[]>{
-    return this.httpClient.get<CountryDetails[]>(`${BASE_URL}/name/${country.name}`, JSON.stringfy(country), HTTP_OPTIONS);
+    return this.httpClient.get<CountryDetails[]>(`${BASE_URL}/name/${country.name}`, HTTP_OPTIONS);
   }
 
 
