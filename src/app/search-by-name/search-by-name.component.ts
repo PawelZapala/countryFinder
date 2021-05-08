@@ -9,9 +9,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./search-by-name.component.css']
 })
 export class SearchByNameComponent implements OnInit {
-  countryDetails: CountryDetails[] = [];
+  country: CountryDetails[] = [];
 
-  constructor(private apiHttp: ApiHttpService, router: Router) { }
+  constructor(private apiHttp: ApiHttpService, private router: Router) { }
 
   ngOnInit(): void {
   }

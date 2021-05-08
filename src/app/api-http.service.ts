@@ -20,5 +20,13 @@ export class ApiHttpService {
     return this.httpClient.get<CountryDetails[]>(`${BASE_URL}/name/${country.name}`, HTTP_OPTIONS);
   }
 
+  getCountryByCapital(country: CountryDetails): Observable<CountryDetails[]>{
+    return this.httpClient.get<CountryDetails[]>(`${BASE_URL}/capital/${country.capital}`, HTTP_OPTIONS);
+  }
+
+  getCountryByCurrency(country: CountryDetails): Observable<CountryDetails[]>{
+    return this.httpClient.get<CountryDetails[]>(`${BASE_URL}/currency/${country.currencies}`, HTTP_OPTIONS);
+  }
+
 
 }
