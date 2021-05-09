@@ -1,10 +1,8 @@
 <div class="uk-container-expand uk-height-viewport uk-flex-middle uk-flex uk-flex-center uk-background-muted">
   <div class="uk-padding">
     <h2 class="uk-heading-small uk-margin-remove-top">Country search by</h2>
-     <div class="uk-flex uk-flex-center">
-        <a routerLink="searchByName" class="uk-button uk-border-rounded">Name</a>
-        <a routerLink="searchByCapital" class="uk-button uk-border-rounded">Capital city</a>
-        <a routerLink="searchByCurrency" class="uk-button uk-border-rounded">Currency</a>
-     </div>
-    </div>
+      <a [routerLink]="['/search-by-name']" class="uk-button uk-border-rounded">Search by name</a>
+      <a [routerLink]="['/search-by-capital']" class="uk-button uk-border-rounded">Search by capital</a>
+      <a [routerLink]="['/search-by-currency']" class="uk-button uk-border-rounded">Search by currency</a>
+  </div>
 </div>

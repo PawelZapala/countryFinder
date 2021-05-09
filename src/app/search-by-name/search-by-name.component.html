@@ -1,12 +1,23 @@
 <div class="uk-container-expand uk-height-viewport uk-flex-middle uk-flex uk-flex-center uk-background-muted">
   <div class="uk-background-muted uk-border-rounded uk-padding">
     <button routerLink="" class="uk-icon-button" uk-icon="arrow-left"></button>
-    <h2 class="uk-heading-small uk-margin-remove-top">Country search by Name</h2>
-      <div class="uk-form-stacked">
-        <div class="uk-margin">
-          <input class="uk-input uk-border-rounded" type="text">
+    <h2 class="uk-heading-small uk-margin-remove-top">Search countries by name</h2>
+    <div class="input">
+      <form [formGroup]="findCountryForm">
+        <div class="uk-form-stacked">
+          <div class="uk-margin">
+            <input type="text" formControlName="name" class="uk-input uk-border-rounded uk"
+                   [ngClass]="{'is-invalid': findCountryForm.get('name').touched}"
+                   pattern="[a-zA-Z]*">
+          </div>
         </div>
-      </div>
-      <a class="uk-button uk-button-primary uk-border-rounded uk-align-right">Search</a>
+        <a (click)="getCountryByName()"
+           class="uk-button uk-button-primary uk-border-rounded uk-align-right">Search
+        </a>
+      </form>
     </div>
+    <div class="uk-flex uk-flex-column">
+      <app-result *ngFor="let country of countryList" [country]="country"></app-result>
+    </div>
+  </div>
 </div>

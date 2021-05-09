@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {MainPaigeComponent} from './main-paige/main-paige.component';
-import {SearchByNameComponent} from './search-by-name/search-by-name.component';
-import {SearchByCurrencyComponent} from './search-by-currency/search-by-currency.component';
+import {RouterModule, Routes} from '@angular/router';
 import {SearchByCapitalComponent} from './search-by-capital/search-by-capital.component';
+import {SearchByCurrencyComponent} from './search-by-currency/search-by-currency.component';
+import {SearchByNameComponent} from './search-by-name/search-by-name.component';
+import {CountryDetailsComponent} from './country-details/country-details.component';
+import {MainPaigeComponent} from './main-paige/main-paige.component';
 
-const routes: Routes = [
+const  routes: Routes = [
   {path: '', component: MainPaigeComponent},
-  {path: 'searchByName', component: SearchByNameComponent},
-  {path: 'searchByCapital', component: SearchByCapitalComponent},
-  {path: 'searchByCurrency', component: SearchByCurrencyComponent}
+  {path: 'country-details/:name', component: CountryDetailsComponent},
+  {path: 'search-by-name', component: SearchByNameComponent},
+  {path: 'search-by-capital', component: SearchByCapitalComponent},
+  {path: 'search-by-currency', component: SearchByCurrencyComponent},
 ];
 
 @NgModule({
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
