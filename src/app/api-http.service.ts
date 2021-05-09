@@ -11,25 +11,25 @@ const HTTP_OPTIONS = {headers: new HttpHeaders({'Content-Type': 'application/jso
 })
 export class ApiHttpService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getCountryByName(country: Country): Observable<Country[]> {
     // @ts-ignore
-    return this.http.get<Country[]>(`${BASE_URL}/name/${country.name}`, JSON.stringify(country), HTTP_OPTIONS);
+    return this.httpClient.get<Country[]>(`${BASE_URL}/name/${country.name}`, JSON.stringify(country), HTTP_OPTIONS);
   }
 
   getCountryByCapital(country: Country): Observable<Country[]> {
     // @ts-ignore
-    return this.http.get<Country[]>(`${BASE_URL}/capital/${country.capital}`, JSON.stringify(country), HTTP_OPTIONS);
+    return this.httpClient.get<Country[]>(`${BASE_URL}/capital/${country.capital}`, JSON.stringify(country), HTTP_OPTIONS);
   }
 
   getCountryByCurrency(country: Country): Observable<Country[]> {
     // @ts-ignore
-    return this.http.get<Country[]>(`${BASE_URL}/currency/${country.currencies}`, JSON.stringify(country), HTTP_OPTIONS);
+    return this.httpClient.get<Country[]>(`${BASE_URL}/currency/${country.currencies}`, JSON.stringify(country), HTTP_OPTIONS);
   }
 
   getCountry(name: string): Observable<Country[]> {
-    return this.http.get<Country[]>(`${BASE_URL}/name/${name}`);
+    return this.httpClient.get<Country[]>(`${BASE_URL}/name/${name}`);
   }
 
 }
