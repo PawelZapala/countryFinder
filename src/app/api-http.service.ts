@@ -28,6 +28,11 @@ export class ApiHttpService {
     return this.httpClient.get<Country[]>(`${BASE_URL}/currency/${country.currencies}`, JSON.stringify(country), HTTP_OPTIONS);
   }
 
+  getCountryByLanguage(country: Country): Observable<Country[]> {
+    // @ts-ignore
+    return this.httpClient.get<Country[]>(`${BASE_URL}/lang/${country.languages}`, JSON.stringify(country), HTTP_OPTIONS);
+  }
+
   getCountry(name: string): Observable<Country[]> {
     return this.httpClient.get<Country[]>(`${BASE_URL}/name/${name}`);
   }

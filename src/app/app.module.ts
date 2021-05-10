@@ -11,6 +11,7 @@ import {SearchByNameComponent} from './search-by-name/search-by-name.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import {ResultComponent} from './result/result.component';
 import {MainPaigeComponent} from './main-paige/main-paige.component';
+import { SearchByLanguageComponent } from './search-by-language/search-by-language.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MainPaigeComponent} from './main-paige/main-paige.component';
     SearchByCurrencyComponent,
     CountryDetailsComponent,
     ResultComponent,
-    MainPaigeComponent
+    MainPaigeComponent,
+    SearchByLanguageComponent,
   ],
   imports: [
     BrowserModule,
