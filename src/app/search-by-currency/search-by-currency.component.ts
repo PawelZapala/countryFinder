@@ -12,6 +12,7 @@ export class SearchByCurrencyComponent implements OnInit {
   findCountryForm: FormGroup;
   @Input() country: Country;
   countryList: Country[] = [];
+  countryNumber: number;
 
   constructor(private apiHttp: ApiHttpService,
               private builder: FormBuilder) { }
@@ -32,6 +33,7 @@ export class SearchByCurrencyComponent implements OnInit {
     console.log('start');
     this.apiHttp.getCountryByCurrency(this.findCountryForm.value).subscribe(country => {
         this.countryList = country;
+        this.countryNumber = country.length;
         this.findCountryForm.reset();
       }
     );

@@ -12,6 +12,7 @@ export class SearchByLanguageComponent implements OnInit {
   findCountryForm: FormGroup;
   @Input() country: Country;
   countryList: Country[] = [];
+  countryNumber: number;
 
   constructor(private apiHttp: ApiHttpService,
               private builder: FormBuilder) {
@@ -25,7 +26,7 @@ export class SearchByLanguageComponent implements OnInit {
   makeForm() {
     // @ts-ignore
     this.findCountryForm = this.builder.group({
-        language: ['', Validators.required]
+        languages: ['', Validators.required]
       }
     );
   }
@@ -33,6 +34,7 @@ export class SearchByLanguageComponent implements OnInit {
   getCountryByLanguage(): void {
     this.apiHttp.getCountryByLanguage(this.findCountryForm.value).subscribe(country => {
         this.countryList = country;
+        this.countryNumber = country.length;
         this.findCountryForm.reset();
       }
     );

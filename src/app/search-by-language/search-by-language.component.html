@@ -6,8 +6,8 @@
       <form [formGroup]="findCountryForm">
         <div class="uk-form-stacked">
           <div class="uk-margin">
-            <input type="text" formControlName="language" class="uk-input uk-border-rounded uk"
-                   [ngClass]="{'is-invalid': findCountryForm.get('language').touched}"
+            <input type="text" formControlName="languages" class="uk-input uk-border-rounded uk"
+                   [ngClass]="{'is-invalid': findCountryForm.get('languages').touched}"
                    pattern="[a-zA-Z]*">
           </div>
         </div>
@@ -17,6 +17,7 @@
       </form>
     </div>
     <div class="uk-flex uk-flex-column">
+      <div class="uk-text-large">Number of countries: {{countryNumber}}</div>
       <app-result *ngFor="let country of countryList" [country]="country"></app-result>
     </div>
   </div>

@@ -12,6 +12,7 @@ export class SearchByCapitalComponent implements OnInit {
   findCountryForm: FormGroup;
   @Input() country: Country;
   countryList: Country[] = [];
+  countryNumber: number;
 
   constructor(private apiHttp: ApiHttpService,
               private builder: FormBuilder) { }
@@ -33,6 +34,7 @@ export class SearchByCapitalComponent implements OnInit {
     console.log('start');
     this.apiHttp.getCountryByCapital(this.findCountryForm.value).subscribe(country => {
         this.countryList = country;
+        this.countryNumber = country.length;
         this.findCountryForm.reset();
       }
     );

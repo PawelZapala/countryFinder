@@ -17,6 +17,7 @@
       </form>
     </div>
     <div class="uk-flex uk-flex-column">
+      <div class="uk-text-large">Number of countries: {{countryNumber}}</div>
       <app-result *ngFor="let country of countryList" [country]="country"></app-result>
     </div>
   </div>
