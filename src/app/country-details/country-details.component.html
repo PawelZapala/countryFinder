@@ -11,7 +11,10 @@
     <p><strong>Population:</strong> {{country.population}}</p>
     <p><strong>Area:</strong> {{country.area}}</p>
     <p><strong>Timezones:</strong> {{country.timezones}}</p>
-    <p><strong>Borders:</strong> {{country.borders}}</p>
+    <p><strong>Borders:</strong>
+
+      <a *ngFor="let border of country.borders" (click)="getBorderCountry(border)">{{border + ' '}}</a></p>
+
     <p><strong>Currencies:</strong>
       <span *ngFor="let currency of country.currencies"> {{currency.code}}</span>
     </p>

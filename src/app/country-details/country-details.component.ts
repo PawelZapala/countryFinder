@@ -26,4 +26,14 @@ export class CountryDetailsComponent implements OnInit {
 
     });
   }
+
+  getBorderCountry(name): void {
+    this.apiHttp.getBorderCountry(name).subscribe(country => {
+      console.error();
+      const countryArray = new Array (1);
+      countryArray[0] = country;
+      this.countryDetails = countryArray;
+    });
+    }
 }
+
