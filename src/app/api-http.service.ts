@@ -33,9 +33,9 @@ export class ApiHttpService {
     return this.httpClient.get<Country[]>(`${BASE_URL}/lang/${country.languages}`, JSON.stringify(country), HTTP_OPTIONS);
   }
 
-  getBorderCountry(nameBorder: string): Observable<Country[]> {
+  getBorderCountry(nameBorder: string): Observable<Country> {
     // @ts-ignore
-    return this.httpClient.get<Country[]>(`${BASE_URL}/alpha/${nameBorder}`);
+    return this.httpClient.get<Country>(`${BASE_URL}/alpha/${nameBorder}`);
   }
 
   getCountry(name: string): Observable<Country[]> {
